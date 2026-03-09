@@ -1,19 +1,37 @@
 <!DOCTYPE html>
 <html>
+
 <head>
 <title>Ice Cream Sales Predictor</title>
 
 <style>
+
 body{
 font-family: Arial;
 text-align:center;
 margin-top:100px;
+background-color:#f4f4f4;
 }
 
-input,button{
+input{
 padding:10px;
-font-size:18px;
+font-size:16px;
 }
+
+button{
+padding:10px 20px;
+font-size:16px;
+background-color:#4CAF50;
+color:white;
+border:none;
+border-radius:5px;
+cursor:pointer;
+}
+
+button:hover{
+background-color:#45a049;
+}
+
 </style>
 
 </head>
@@ -22,9 +40,11 @@ font-size:18px;
 
 <h1>🍦 Ice Cream Sales Predictor</h1>
 
-<p>Enter Temperature</p>
+<p>This AI model predicts ice cream sales based on temperature using Linear Regression.</p>
 
-<input id="temp" type="number" placeholder="Temperature">
+<h3>Enter Temperature</h3>
+
+<input id="temp" type="number" placeholder="Temperature (°C)" min="20" max="45">
 
 <br><br>
 
@@ -37,6 +57,12 @@ font-size:18px;
 function predict(){
 
 let temp = document.getElementById("temp").value
+
+if(temp < 20 || temp > 45){
+document.getElementById("result").innerText =
+"Please enter a temperature between 20°C and 45°C"
+return
+}
 
 let m = 14.299363057324841
 let b = -269.8407643312102
@@ -51,4 +77,5 @@ document.getElementById("result").innerText =
 </script>
 
 </body>
+
 </html>
