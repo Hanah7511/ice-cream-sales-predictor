@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Ice Cream Sales Predictor</title>
+
+<style>
+body{
+font-family: Arial;
+text-align:center;
+margin-top:100px;
+}
+
+input,button{
+padding:10px;
+font-size:18px;
+}
+</style>
+
+</head>
+
+<body>
+
+<h1>🍦 Ice Cream Sales Predictor</h1>
+
+<p>Enter Temperature</p>
+
+<input id="temp" type="number" placeholder="Temperature">
+
+<br><br>
+
+<button onclick="predict()">Predict Sales</button>
+
+<h2 id="result"></h2>
+
+<script>
+
+function predict(){
+
+let temp = document.getElementById("temp").value
+
+let m = 14.299363057324841
+let b = -269.8407643312102
+
+let sales = m * temp + b
+
+document.getElementById("result").innerText =
+"Predicted Ice Cream Sales: " + Math.round(sales)
+
+}
+
+</script>
+
+</body>
+</html>
