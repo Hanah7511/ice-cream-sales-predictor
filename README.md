@@ -17,4 +17,4 @@ This project predicts ice cream sales based on temperature using a Linear Regres
 - JavaScript
 
 Live Demo
-https://your-netlify-link.netlify.app
+https://bright-salamander-85ef74.netlify.app/
